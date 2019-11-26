@@ -1,11 +1,16 @@
 {
   "name": "react-ecommerce",
   "version": "0.1.0",
+  "author": "Mauricio Feldman-Abe",
   "private": true,
-  "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+  "description": "online store built in React",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauabe/react-ecommerce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mauabe/react-ecommerce/issues"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +32,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
   }
 }
