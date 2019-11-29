@@ -2,7 +2,6 @@ import React from 'react';
 import MenuItem from './MenuItem'
 import directory from './directory.scss'
 
-
 class Directory extends React.Component {
   constructor(props){
     super(props);
@@ -12,29 +11,34 @@ class Directory extends React.Component {
       {
         title: 'hats',
         imageUrl: 'https://i/ibb.co/cspntL1/hats.png',
-        id: 1
+        id: 1,
+        url: '/hats'
       },
       {
         title: 'jackets',
         imageUrl: 'https://i/ibb.co/px2tCc3/jackets.png',
-        id: 2
+        id: 2,
+        url: ''
       },
       {
         title: 'sneakers',
         imageUrl: 'https://i/ibb.co/0jqHpnp/sneakers.png',
-        id: 3
+        id: 3,
+        url: ''
       },
       {
         title: 'women',
         imageUrl: 'https://i/ibb.co/GCCdy8t/women.png',
         size: 'large',
-        id: 4
+        id: 4,
+        url: ''
       },
       {
         title: 'men',
         imageUrl: 'https://i/ibb.co/R70vBrQ/men.png',
         size: 'large',
-        id: 5
+        id: 5,
+        url: ''
       }]
     }
   }
