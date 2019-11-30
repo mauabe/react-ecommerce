@@ -6,7 +6,7 @@ import menuitem from './menuitem.scss';
 const MenuItem = ({title, imageUrl, size, linkUrl, match}) => (
   <div style={{ backgroundImage:`url(${imageUrl})` }}
     className={`${size} menu-item`}
-    onClick={() => history.push(`${match.url}${linkUrl}`)}
+    onClick={() => this.props.history.push(`${match.url}${linkUrl}`)}
   >
     <div className="content">
      <h1 className='title'>{title.toUpperCase()}</h1>
