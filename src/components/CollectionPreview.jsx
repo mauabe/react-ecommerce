@@ -6,9 +6,9 @@ import CollectionItem from './CollectionItem.jsx';
 const CollectionPreview = ({title, items}) => (
   <div className='collection-preview'>
     <h1 className='title'>{title.toUppercase()}</h1>
-      <div key={items.id} className='preview'>
+      <div className='preview'>
         {items
-          .filter(({index, ...otherItemProps}) => index < 4)
+          .filter((index, ...otherItemProps) => index < 4)
           .map(({id, ...otherItemProps}) => (<CollectionItem key={id} {...otherItemProps} />))
         }
     </div>
