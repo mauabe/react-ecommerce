@@ -3,8 +3,8 @@ import MenuItem from './MenuItem'
 import './directory.scss'
 
 class Directory extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
 
     this.state = {
       sections: [
@@ -12,33 +12,33 @@ class Directory extends React.Component {
         title: 'hats',
         imageUrl: 'https://i/ibb.co/cspntL1/hats.png',
         id: 1,
-        url: '/hats'
+        linkUrl: '/hats'
       },
       {
         title: 'jackets',
         imageUrl: 'https://i/ibb.co/px2tCc3/jackets.png',
         id: 2,
-        url: ''
+        linkUrl: ''
       },
       {
         title: 'sneakers',
         imageUrl: 'https://i/ibb.co/0jqHpnp/sneakers.png',
         id: 3,
-        url: ''
+        linkUrl: ''
       },
       {
         title: 'women',
         imageUrl: 'https://i/ibb.co/GCCdy8t/women.png',
         size: 'large',
         id: 4,
-        url: ''
+        linkUrl: ''
       },
       {
         title: 'men',
         imageUrl: 'https://i/ibb.co/R70vBrQ/men.png',
         size: 'large',
         id: 5,
-        url: ''
+        linkUrl: ''
       }]
     }
   }
@@ -46,10 +46,9 @@ class Directory extends React.Component {
   render(){
     return(
       <div className="directory-menu">
-        {this.state.sections.map(({title, imageUrl, id, size}) => (
-          <MenuItem key={id} title={title} image={imageUrl} size={size}/>
+        {this.state.sections.map(({id, ...otherSectionProps}) => (
+          <MenuItem key={id} {...otherSectionProps}/>
         ))}
-
       </div>
     );
   }

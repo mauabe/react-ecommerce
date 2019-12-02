@@ -1,7 +1,7 @@
 import React from 'react';
 import './homepage.scss';
 import Directory from '../components/Directory';
-import ShopPage from '../components/ShopPage';
+import ShopPage from './ShopPage';
 
 const Homepage = () => (
   <div className='homepage'>
