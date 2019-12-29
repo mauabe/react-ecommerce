@@ -1,8 +1,8 @@
 import React from 'react';
-import '../scss/sing-in.scss';
 import FormInput from './FormInput';
 import CustomButton from './CustomButton';
 import {signInWithGoogle} from '../firebase-utils'
+import '../scss/sing-in.scss';
 class SignInSignUp extends React.Component{
   constructor(props){
     super(props);
@@ -12,11 +12,11 @@ class SignInSignUp extends React.Component{
     }
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
     this.setState({email: '', password: ''})
   }
-  handleChange = e =>   {
+  handleChange = event =>   {
     const {value, name} = event.target;
     this.setState( {[name]: value})
   }
