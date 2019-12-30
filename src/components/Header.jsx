@@ -10,10 +10,10 @@ const Header = ({currentUser}) => (
       <Logo className="logo" />
     </Link>
     <div className="options">
-      <Link className="option" to="shop">
+      <Link className="option" to="/shop">
         SHOP
       </Link>
-      <Link className="option" to="shop">
+      <Link className="option" to="/shop">
         CONTACT
       </Link>
       {currentUser ?
@@ -25,4 +25,7 @@ const Header = ({currentUser}) => (
   </div>
 )
 
-export default Header;
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
+export default connect(mapStateToProps)(Header);
