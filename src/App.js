@@ -8,32 +8,27 @@ import {auth, createUserProfileDocument} from './firebase-utils';
 import SignInAndSignUpPage from '../src/pages/SignInAndSignUpPage';
 
 class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      currentUser: null
-    }
-  }
+  // constructor(){
+    //super();
+    //this.state = {currentUser: null} }
+    unsubscribeFromAuth = null;
 
-  unsubscribeFromAuth = null;
-
-  componentDidMount(){
+    componentDidMount(){
+      const {setCUrrentUser} = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
-        // this.setState({currentUser: user})
         const userRef = await createUserProfileDocument(userAuth);
-        console.log(userAuth);
 
         userRef.onSnapshot(snapShot => {
           this.setState({
-            currentUser: {
+            currentUser: ({
               id: snapShot.id,
               ...snapShot.data()
-            }
+            })
           })
         });
       } else {
-        this.setState({currentUser: userAuth})
+        setCurrentUser(userAuth)
       }
     })
   }
@@ -56,15 +51,29 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser}/>
+        <Header />
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route path='/hats' component={ShopPage} />
-          <Route path='/signin' component={SignInAndSignUpPage} />
+          <Route
+            exact
+            path='/signin'
+            render={() => this.props.currentUser ?
+              ( <Redirect to='/' /> ) : ( <SignInAndSignUpPage /> )
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = ({user}) => ({
+  currentUser: user.currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentuser: user => dispatch(setCurrentUser(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
