@@ -4,10 +4,10 @@ import CustomButton from './CustomButton';
 import CartItem from './CartItem';
 import '../scss/cart-dropdown.scss'
 
-const Cart = ({cartItems}) => (
+const CartDropdown = ({cartItems}) => (
   <div className="cart-dropdown">
     <div className="cart-items">
-      {cartItem.map(cartItem => (
+      {cartItems.map(cartItem => (
         <CartItem key={cartItem.id} item={CartItem} />
       ))}
     </div>
@@ -15,10 +15,8 @@ const Cart = ({cartItems}) => (
   </div>
 )
 
-mapStateToProps = ({cart: {cartItems}}) => ({
+const mapStateToProps = ({cart: {cartItems}}) => ({
   cartItems
 })
 
-
-
-export default CartDropdown;
+export default connect(mapStateToProps, null)(CartDropdown);

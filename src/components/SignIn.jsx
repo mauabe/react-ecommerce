@@ -29,6 +29,7 @@ class SignIn extends React.Component{
   }
 
   render(){
+    // eslint-disable-next-line 
     const mikeUser = {
       displayName: 'Mike',
       email: 'mike@gmail.com',
