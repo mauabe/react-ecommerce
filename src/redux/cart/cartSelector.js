@@ -12,6 +12,11 @@ export const selectCartItemsCount = createSelector(
   cartItems => cartItems.reduce((accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0)
 );
 
+export const selectCartTotal = cartSelector(
+  [selectCartItems],
+  cartItems => cartItems.reduce((accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity * cartItem.price , 0)
+);
+
 import selectCartItemsCount from '../cart/cartActions'
 
 const mapStateToProps = state => ({

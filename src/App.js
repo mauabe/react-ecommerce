@@ -7,6 +7,7 @@ import Header from './components/Header';
 import {auth, createUserProfileDocument} from './firebase-utils';
 import SignInAndSignUpPage from '../src/pages/SignInAndSignUpPage';
 import {setCurrentUser} from './redux/user/userActions';
+import CheckoutPage from './pages/CheckoutPage';
 import './App.css';
 
 class App extends React.Component {
@@ -53,6 +54,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route path='/hats' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
           <Route
             exact
             path='/signin'
