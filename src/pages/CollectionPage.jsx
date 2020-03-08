@@ -6,6 +6,7 @@ const CollectionPage = ({match}) => {
   return (
     <div className='collection'>
       <h2>COLLECTION PAGE</h2>
+      {CollectionItem}
     </div>
   )
 }
