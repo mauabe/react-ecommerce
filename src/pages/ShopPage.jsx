@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import CollectionsOverview from '../components/CollectionsOverview';
-import CollectionPage from  './Collection';
+import CollectionPage from  './CollectionPage';
 // import {createStructuredSelector} from 'reselect';
 // import CollectionPreview from '../components/CollectionPreview';
 // import {selectCollections} from '../redux/shop/shopSelector';
@@ -10,7 +10,7 @@ const ShopPage = ({match}) => {
   return (
     <div className='shop-page'>
       <Route exact path={`${match.path}`} component={CollectionsOverview} />
-      <Route path={`${match.path}/:collectionId`} component={Collection} />
+      <Route path={`${match.path}/:collectionId`} component={CollectionPage} />
     </div>
   )}
 
