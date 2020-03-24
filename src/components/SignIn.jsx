@@ -3,6 +3,7 @@ import FormInput from './FormInput';
 import CustomButton from './CustomButton';
 import {auth, signInWithGoogle} from '../firebase-utils'
 import '../scss/sing-in.scss';
+
 class SignIn extends React.Component{
   constructor(props){
     super(props);
@@ -29,7 +30,7 @@ class SignIn extends React.Component{
   }
 
   render(){
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
     const mikeUser = {
       displayName: 'Mike',
       email: 'mike@gmail.com',

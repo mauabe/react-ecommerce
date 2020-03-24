@@ -1,12 +1,18 @@
 import {createSelector} from 'reselect';
-import {toggleCartHidden} from '../cart/cartActions'
-import {connect} from 'react-redux';
+
+// import {toggleCartHidden} from '../cart/cartActions'
+// import {connect} from 'react-redux';
 
 const selectCart = state => state.cart;
 
 export const selectCartItems = createSelector(
   [selectCart],
   cart => cart.cartItems
+)
+
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
 )
 
 export const selectCartItemsCount = createSelector(
@@ -20,12 +26,12 @@ export const selectCartTotal = createSelector(
 );
 
 
-const mapStateToProps = state => ({
-  itemCount: selectCartItemsCount(state)
-})
+// const mapStateToProps = state => ({
+//   itemCount: selectCartItemsCount(state)
+// })
 
-const mapDispatchToProps = dispatch => ({
-  toggleCartHidden:  dispatch(toggleCartHidden())
-})
+// const mapDispatchToProps = dispatch => ({
+//   toggleCartHidden:  dispatch(toggleCartHidden())
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(selectCart);
+// export default connect(mapStateToProps, mapDispatchToProps)(selectCart);
